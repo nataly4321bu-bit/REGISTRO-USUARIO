@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Registro de usuario</title>
+</head>
+<body>
+    <div class="formulario">
+         <div class="imagen">
+            <img src="img/usuario.jpg" alt="Salud">
+        </div>
+        <h2> REGISTRO DE USUARIO </h2>
+       <br>
+        <form id="registrationForm">
+             <div class="caja">
+                <label for="Nombre">Nombre:</label>
+                <input type="text" id="Nombre" name="Nombre"  oninput="validateFullName(this)" placeholder="Ingrese su nombre" required title="Ingresa tu nombre">
+            </div>
+
+            <div class="caja">
+                <label for="Nombre">Contraseña:</label>
+                <input type="password" id="Nombre" name="Nombre" maxlength="8" placeholder="Solo se permiten 8 caracteres" required title="Ingresa tu nombre">
+            </div>
+            <div class="caja">
+                <label for="Nombre">Fecha de Nacimiento:</label>
+                <input type="date" id="Nombre" name="Nombre"|                                                                                                                                               >
+            </div>
+            <div class="caja">
+                <label for="Nombre">Color:</label>
+                <input type="color" id="Nombre" name="Nombre"  oninput="validateFullName(this)" placeholder="Solo se permiten 8 caracteres" required title="Ingresa tu nombre">
+            </div>
+
+            <label>País:</label>
+            <select required>
+                <option value="">Selecciona</option>
+                <option>México</option>
+                <option>Rusia</option>
+                <option>Dubai</option>
+                <option>Corea</option>
+                <option>Argentina</option>
+                <option>Ecuador</option>
+                <option>E.U</option>
+                <option>Canada</option>
+                 <option>Chile</option>
+                <option>Brasil</option>
+                <option>República Dominicana</option>
+               
+
+            </select>
+            <button type="submit">
+                Enviar 
+            </button>
+               </form>
+    </div>
+    <script>
+              function validateFullName(input) {
+        input.value = input.value.replace(/[^A-Za-záéíóúÁÉÍÓÚñÑ\s]/g, '');
+        input.value = input.value.toUpperCase();
+     }
+
+
+    document.getElementById('registrationForm').onsubmit = function(event){
+    event.preventDefault();
+    alert('Encuesta enviada');
+    setTimeout(function(){
+        location.reload();
+    }, 2000);
+};
+    </script>
+</body>
+</html>
